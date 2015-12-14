@@ -1,25 +1,26 @@
 // injecting ngRoute
 angular.module('app.routes', ['ngRoute'])
 
-.config(function($routeProvier, $locationProvider){
+	.config(['$routeProvider', '$locationProvider', userRoutes])
 
-  // running methods on $routeProvider
+  function userRoutes($routeProvider, $locationProvider){
+
   $routeProvider
   // route for the home page, which is where you log in
-    .when('/', {
-      templateUrl: 'public/partials/login.html',
-      controller: 'mainController',
-      controllerAs: 'mainCtrl'
-    })
-    // route for the user profile view
-    .when('/home', {
-      templateUrl: 'public/partials/user-home.html',
-      controller: 'userController',
-      controllerAs: 'userCtrl'
-    })
-    .when('/profile', {
-      templateUrl: 'public/partials/user-profile.html',
-      controller: 'userController',
-      controllerAs: 'userCtrl'
-    })
-})
+  .when('/login', {
+        templateUrl : 'public/partials/login.html',
+          controller  : 'mainController',
+            controllerAs: 'login'
+      })
+
+      // show all users
+      .when('/users', {
+        templateUrl: 'partials/allUsers.html',
+        controller: 'userController',
+        controllerAs: 'user'
+      })
+
+      .otherwise({
+        redirectTo: '/login'
+      });
+}
