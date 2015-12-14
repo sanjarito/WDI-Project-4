@@ -1,7 +1,7 @@
 var express     = require('express')
 var apiRouter   = express.Router()
 var mongoose    = require('mongoose')
-var User        = require('../models/User.js')
+var User        = require('../models/user.js')
 var jwt         = require('jsonwebtoken')
 var	superSecret = 'project4'
 
