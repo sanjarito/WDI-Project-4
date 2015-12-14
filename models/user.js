@@ -1,6 +1,6 @@
-var mongoose = require('mogoose')
+var mongoose = require('mongoose')
 var Schema   = mongoose.Schema
-var bcrypt	 = require('bcrpt-nodejs')
+var bcrypt	 = require('bcrypt-nodejs')
 
 
 //create user model schema
@@ -36,4 +36,3 @@ UserSchema.methods.comparePassword = function(password){
 }
 
 module.exports = mongoose.model('User', UserSchema)
-

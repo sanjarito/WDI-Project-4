@@ -27,7 +27,7 @@ angular.module('mainCtrl', [])
     // clear the error
     mainCtrl.error = ''
     // if a user successfully logs in, redirect to user-home page
-    auth.login(mainCtrl.loginData.username, mainCtrl.loginData.password)
+    auth.login(mainCtrl.loginData.email, mainCtrl.loginData.password)
         .success(function(data){
           mainCtrl.processing = false
 
