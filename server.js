@@ -33,17 +33,17 @@ app.use(morgan('dev'))
 app.use(express.static(__dirname + '/public'))
 
 // API Routes
-var apiRoutes = require('./app/routes/api')(app,express)
-app.use('/api', apiRoutes)
+// var apiRoutes = require('./app/routes/api')(app,express)
+// app.use('/api', apiRoutes)
 
 // Redirects invalid URLS to Index.html
 app.get('*', function (req,res){
   res.sendFile(path.join(__dirname+ '/public/app/views/index.html'))
 })
 
-
-
-
+app.get('/', function(req, res){
+  res.render('index')
+})
 
 //Start the Server
 // Server Listen crap

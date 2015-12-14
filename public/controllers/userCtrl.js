@@ -57,5 +57,23 @@ angular.module('userCtrl', ['userService'])
 
   userCtrl.type = 'edit'
 
-  
+  User.get($routeParams.user_id)
+      .success(function(data){
+        userCtrl.userData = data
+      })
+  userCtrl.saveUser = function(){
+      userCtrl.processing = true
+      userCtrl.message = ''
+
+      User.update($routeParams.user_id, userCtrl.userData)
+          .success(function(data){
+            userCtrl.processing = false
+
+            // clear the form
+            userCtrl.userData = {}
+
+            // bind the message from our API to userCtrl.message
+            userCtrl.message = data.message
+          })
+  }
 })
