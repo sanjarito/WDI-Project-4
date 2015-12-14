@@ -50,5 +50,7 @@ app.use('/api', apiRouter)
 
 //Start the Server
 // Server Listen crap
-app.listen(config.port)
-  console.log('it is up and running on port 3000')
+app.listen(config.port, function(){
+	console.log('it is up and running on port 3000')	
+})
+  
