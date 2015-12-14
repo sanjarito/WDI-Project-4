@@ -1,5 +1,5 @@
 module.exports = {
   'port': process.env.PORT || 3000,
-  'database' :  'mongodb://localhost:27017/users',
+  'database' :  'mongodb://topout:topout@ds029595.mongolab.com:29595/topout',
   'secret': 'ilikecheese'
 }
