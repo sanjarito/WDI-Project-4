@@ -1,9 +1,9 @@
 angular.module('TopOutApp', ['mainCtrl', 'TopOutRouter', 'authService'])
-// 	.directive('loginForm', loginForm)
+	.directive('navbar', navbar)
 //
-// function loginForm(){
-// 	var directive = {
-// 		restrict: 'EA',
-// 		templateUrl: '/partials/login.html'
-// 	}
-// }
+function navbar(){
+	var directive = {
+		restrict: 'EA',
+		templateUrl: 'partials/nav-bar.html'
+	}
+}

@@ -1,7 +1,18 @@
 // injecting ngRoute
-angular.module('TopOutRouter', ['ngRoute'])
-
+angular.module('TopOutRouter', ['ngRoute',])
+	.directive('navbar', navbar)
 	.config(['$routeProvider', '$locationProvider', userRoutes])
+
+	function navbar(){
+		var directive = {
+			restrict: 'E',
+			templateUrl: 'partials/nav-bar.html'
+		}
+		return directive
+	}
+
+
+
 
   function userRoutes($routeProvider, $locationProvider){
 
@@ -19,6 +30,8 @@ angular.module('TopOutRouter', ['ngRoute'])
         controller: 'userController',
         controllerAs: 'user'
       })
+
+
 
       .otherwise({
         redirectTo: '/'
